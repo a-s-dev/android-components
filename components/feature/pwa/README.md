@@ -65,6 +65,8 @@ This component emits the following [Facts](../../support/base/README.md#Facts):
 
 | Action | Item    | Extras         | Description                        |
 |--------|---------|----------------|------------------------------------|
+| CLICK  | install_shortcut  |   | The user installs a PWA shortcut. |
+| CLICK  | add_to_homescreen_tap  |   | The user added a PWA to the homescreen. |
 | CLICK  | homescreen_icon_tap  |   | The user tapped the PWA icon on the homescreen. |
 | INTERACTION | enter_background | `itemExtras` | The current system time when the app is backgrounded. |
 | INTERACTION | enter_foreground | `itemExtras` | The current system time when the app is foregrounded. |

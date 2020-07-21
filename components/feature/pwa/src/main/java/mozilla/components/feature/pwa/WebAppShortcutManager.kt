@@ -92,7 +92,6 @@ class WebAppShortcutManager(
                 }
                 val pendingIntent = PendingIntent.getActivity(context, 0, intent, FLAG_UPDATE_CURRENT)
                 val intentSender = pendingIntent.intentSender
-
                 ShortcutManagerCompat.requestPinShortcut(context, shortcut, intentSender)
             }
         }
@@ -165,6 +164,8 @@ class WebAppShortcutManager(
 
         val shortLabel = manifest.shortName ?: manifest.name
         storage.saveManifest(manifest)
+
+        emitPwaInstallFact()
 
         return ShortcutInfoCompat.Builder(context, manifest.startUrl)
             .setLongLabel(manifest.name)

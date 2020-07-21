@@ -18,6 +18,8 @@ class ProgressiveWebAppFacts {
      * Items that specify which portion of the [PwaFeature] was interacted with
      */
     object Items {
+        const val INSTALL_SHORTCUT = "install_shortcut"
+        const val ADD_TO_HOMESCREEN_TAP = "add_to_homescreen_tap"
         const val HOMESCREEN_ICON_TAP = "homescreen_icon_tap"
         const val ENTER_BACKGROUND = "enter_background"
         const val ENTER_FOREGROUND = "enter_foreground"
@@ -52,10 +54,22 @@ private fun emitPwaFact(
     ).collect()
 }
 
+internal fun emitAddToHomeScreenTapFact() =
+    emitPwaFact(
+        Action.CLICK,
+        ProgressiveWebAppFacts.Items.ADD_TO_HOMESCREEN_TAP
+    )
+
 internal fun emitHomescreenIconTapFact() =
     emitPwaFact(
         Action.CLICK,
         ProgressiveWebAppFacts.Items.HOMESCREEN_ICON_TAP
+    )
+
+internal fun emitPwaInstallFact() =
+    emitPwaFact(
+        Action.CLICK,
+        ProgressiveWebAppFacts.Items.INSTALL_SHORTCUT
     )
 
 internal fun emitForegroundTimingFact(timingNs: Long) =
