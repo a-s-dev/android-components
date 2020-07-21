@@ -46,8 +46,9 @@ dependencies {
     implementation Dependencies.kotlin_stdlib
     implementation Dependencies.kotlin_coroutines
     implementation Dependencies.androidx_work_runtime
-    
-    api GLEAN_LIBRARY
+    api (GLEAN_LIBRARY) {
+        exclude group: 'org.mozilla.components', module: 'concept-fetch'
+    }
 
     // So consumers can set a HTTP client.
     api project(':concept-fetch')
