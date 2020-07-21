@@ -62,7 +62,6 @@ class WebAppUseCases(
         private val sessionManager: SessionManager,
         private val shortcutManager: WebAppShortcutManager
     ) {
-
         /**
          * @param overrideBasicShortcutName (optional) Custom label used if the current session
          * is NOT a Progressive Web App
@@ -74,6 +73,7 @@ class WebAppUseCases(
     }
 
     val addToHomescreen by lazy {
+        emitAddToHomeScreenTapFact()
         AddToHomescreenUseCase(applicationContext, sessionManager, shortcutManager)
     }
 
