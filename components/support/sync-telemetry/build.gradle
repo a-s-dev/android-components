@@ -4,6 +4,7 @@
 
 buildscript {
     repositories {
+        mavenLocal()
         maven {
             url "https://maven.mozilla.org/maven2"
         }
